@@ -2,6 +2,11 @@ import numpy as np
 import arcycomb
 import armsgs
 
+try:
+    from xastropy.xutils import xdebug as debugger
+except:
+    import pdb as debugger
+
 # Logging
 msgs = armsgs.get_logger()
 
@@ -133,7 +138,7 @@ def comb_frames(frames_arr, det, method='weightmean', spect=None, weight=None, f
         msgs.info("Rejecting deviant pixels") # Use a robust statistic
         medarr = arcycomb.masked_median(frames_arr, maskvalue)
         stdarr = 1.4826*arcycomb.masked_median(np.abs(frames_arr-medarr[:,:,np.newaxis]), maskvalue)  # 1.4826 approximately converts Median Absolute Deviation to a Standard Deviation
-        frames_arr = arcycomb.masked_limitsetarr(frames_arr, (medarr + rej_level[0]*stdarr), -2, maskvalue)
+        frames_arr = arcycomb.masked_limitsetarr(frames_arr, (medarr - rej_level[0]*stdarr), -2, maskvalue)
         frames_arr = arcycomb.masked_limitsetarr(frames_arr, (medarr + rej_level[1]*stdarr), 2, maskvalue)
         # Delete unecessary arrays
         del medarr, stdarr

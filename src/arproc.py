@@ -504,6 +504,7 @@ def flatnorm(slf, det, msflat, maskval=-999999.9, overpix=6, plotdesc=""):
             finalblaze = np.ones(recframe.shape[0])
             finalblaze[lox:hix] = blaze.copy()
             blazenrm = finalblaze.reshape((finalblaze.size, 1)).repeat(recframe.shape[1], axis=1)
+            debugger.set_trace()
             recframe /= blazenrm
             # Store the blaze for this order
             msblaze[lox:hix,o] = blaze.copy()
