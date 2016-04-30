@@ -522,7 +522,6 @@ class ScienceExposure:
                     else:
                         mspixflat = arcomb.comb_frames(frames, det, spect=self._spect, frametype='pixel flat',
                                                        **self._argflag['pixflat']['comb'])
-                    debugger.set_trace()
                     del frames
                     # Normalize the flat field
                     mspixflatnrm, msblaze = arproc.flatnorm(self, det, mspixflat, overpix=0, plotdesc="Blaze function")

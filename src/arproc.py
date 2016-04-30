@@ -504,7 +504,6 @@ def flatnorm(slf, det, msflat, maskval=-999999.9, overpix=6, plotdesc=""):
             finalblaze = np.ones(recframe.shape[0])
             finalblaze[lox:hix] = blaze.copy()
             blazenrm = finalblaze.reshape((finalblaze.size, 1)).repeat(recframe.shape[1], axis=1)
-            debugger.set_trace()
             recframe /= blazenrm
             # Store the blaze for this order
             msblaze[lox:hix,o] = blaze.copy()
@@ -516,8 +515,10 @@ def flatnorm(slf, det, msflat, maskval=-999999.9, overpix=6, plotdesc=""):
             #rows = np.arange(recsort.shape[0]/4,(3*recsort.shape[0])/4,dtype=np.int)
             #w = np.ix_(rows,np.arange(recframe.shape[1]))
             #recmean = np.mean(recsort[w],axis=0)
-            for i in xrange(recmean.size):
-                recframe[i,:] /= recmean[i]
+            if False: #rec_norm:
+                for i in xrange(recmean.size):
+                    recframe[:,i] /= recmean[i]
+                #recframe[i,:] /= recmean[i]
             # Undo the rectification
             normflat_unrec = arcyextract.rectify_undo(recframe, slf._pixcen[det-1][:,o], slf._lordpix[det-1][:,o],
                                                       slf._rordpix[det-1][:,o], slf._pixwid[det-1][o], maskval,

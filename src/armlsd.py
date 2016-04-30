@@ -143,6 +143,11 @@ def ARMLSD(argflag, spect, fitsdict, reuseMaster=False):
             # Prepare the pixel flat field frame
             update = slf.MasterFlatField(fitsdict, det)
             if update and reuseMaster: armbase.UpdateMasters(sciexp, sc, det, ftype="flat", chktype="pixflat")
+            sciframe = arload.load_frames(slf, fitsdict, [scidx], det,
+                                          frametype='science',
+                                          msbias=slf._msbias[det-1],
+                                          transpose=slf._transpose)
+            debugger.set_trace()
             ###############
             # Derive the spectral tilt
             if slf._tilts[det-1] is None:
