@@ -10,7 +10,7 @@
 #    use '%' to indicate you want to split the keyword value, ':'
 #    indicates the delimiter text, '1' indicates you're interested
 #    in the 1st argument (0-indexed), '<60' is an example criteria.
-#    Each of these should be specified in this order, seperated by
+#    Each of these should be specified in this order, separated by
 #    commas, so the final string would be:
 #    %,:,1,<60
 # 4. If the text '|' appears in the match condition, the absolute

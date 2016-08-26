@@ -726,6 +726,7 @@ def get_ampsec_trimmed(slf, fitsdict, det, scidx):
         except IndexError:
             debugger.set_trace()
         # Save these locations for trimming
+        #print(i)
         if i == 0:
             xfin = xv.copy()
             yfin = yv.copy()

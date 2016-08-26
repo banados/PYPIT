@@ -266,6 +266,7 @@ def set_params(lines, indict, setstr=""):
             elif linspl[1] in indict[linspl[0]].keys():
                 indict[linspl[0]][linspl[1]] = set_params_wtype(indict[linspl[0]][linspl[1]], linspl[2], lines=tline, setstr=setstr)
             else:
+                print(setstr)
                 debugger.set_trace()
                 msgs.error(setstr + "Settings contains bad line (arg 2):"+msgs.newline()+lines[i].split('#')[0].strip())
         elif linspl[0][:3] == 'det': # Detector parameters
@@ -649,7 +650,12 @@ def load_headers(argflag, spect, datlines):
                 else:
                     msgs.error('Bad time unit')
             # Put the value in the keyword
+            #print(kw)
+            #print(value)
             typv = type(value)
+            #print(typv)
+            #print("*"*30)
+
             if typv is int or typv is np.int_:
                 fitsdict[kw].append(value)
             elif typv is float or typv is np.float_:
