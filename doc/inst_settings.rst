@@ -64,12 +64,15 @@ Here is a quick cookbook of the steps involved:
 
 
 * Update FITS properties
-  * timeunit refers to the format of the time KEYWORD (e.g. mjd)
-  * We should give a few examples here
+    * timeunit refers to the format of the time KEYWORD (e.g. mjd)
+    
+    * s=seconds, m=minutes, h=hours, or any of the astropy Time formats:  ``astropy.time.Time.FORMATS``
+    
 * Fiddle with rules for Image type ID
   * NEED TO EXPLAIN SOME OF THESE
 
 * Run
+
 * Add arc solution
   * set debug['arc'] = True in run_pypit
 
