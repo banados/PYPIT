@@ -1,0 +1,19 @@
+2016 Aug 24
+LDSS3 long-slit observations by Drew Newman
+
+LDSS reads out in two amps, so there are *c1.fits and *c2.fits files for each exposure. My targets are always in the c1 chip, so I include those only here.
+
+
+0004-0013  Bias
+0032-0034 Flat
+0058-0060 HeNeAr
+0119 P234-16
+0121 P235-17
+
+
+a standard star was observed in the 2x1 binning (Drew's setup) so it has has its own calibrations:
+
+0014-0023 Bias
+0024-0031 Flat
+0054-0057 HeNeAr
+0113-0114 EG274 [white dwarf]

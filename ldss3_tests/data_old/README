@@ -1,0 +1,33 @@
+Data for z=5.94 QSO P049-26 published in Banados et al. 2016.
+LDSS3 long-slit observations March 11, 2016
+Calibrations taken the following night: March 12.
+
+LDSS reads out in two amps, so there are *c1.fits and *c2.fits files for each exposure. My targets are always in the c1 chip, so I include those only here.
+
+0015 -> QSO spectrum
+0016 -> arc lamp for QSO
+0050 - 0054 -> Dome flat
+0070 - 0078 -> Bias
+0136 -> Standard star LTT6248
+0142 -> Arc lamp for standard
+
+
+fhdr.py *.fits APERTURE OBJECT EXPTIME GRISM FILTER
+#FILENAME      APERTURE OBJECT EXPTIME GRISM FILTER
+ccd0015c1.fits Longslit_1.0 p049 spectrum 600.0 VPH-Red OG590
+ccd0016c1.fits Longslit_1.0 p049 HeNeAr 1.0 VPH-Red OG590
+ccd0050c1.fits Longslit_1.0 longslit1"cen domeflat Qh 5.0 VPH-Red OG590
+ccd0051c1.fits Longslit_1.0 longslit1"cen domeflat Qh 5.0 VPH-Red OG590
+ccd0052c1.fits Longslit_1.0 longslit1"cen domeflat Qh 5.0 VPH-Red OG590
+ccd0053c1.fits Longslit_1.0 longslit1"cen domeflat Qh 5.0 VPH-Red OG590
+ccd0070c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0071c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0072c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0073c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0074c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0075c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0076c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0077c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0078c1.fits Open bias 0.0 VPH-All r_Sloan
+ccd0136c1.fits Longslit_1.0 ltt6248 spectrum 30.0 VPH-Red OG590
+ccd0142c1.fits Longslit_1.0 ltt6248 HeNeAr 1.0 VPH-Red OG590
